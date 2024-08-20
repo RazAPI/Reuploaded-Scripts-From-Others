@@ -1,11 +1,5 @@
---[[ hello very cool incognito / solara (mostly incognito because solara has most of these functions, just not all) script showcase!! 
-pls dont steal source code :( 
-also join https://discord.gg/gYhqMRBeZV because yes    
-]]
---[[
- math support update because math is kewl
- new update:
- table loop update!!
+--[[ All credits go to vxsty \ ballsman3761 on discord & Scriptblox.
+  Here's the loadstring of the raw if needed: 
 ]]
 if getgenv and getgenv().MoreUNC then return end
 
