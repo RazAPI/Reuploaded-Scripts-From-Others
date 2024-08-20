@@ -1,5 +1,6 @@
 --[[ All credits go to vxsty \ ballsman3761 on discord & Scriptblox.
   Here's the loadstring of the raw if needed: 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RazAPI/Reuploaded-Scripts-From-Others/main/MoreUNC-V1-Reupload.lua", true))()
 ]]
 if getgenv and getgenv().MoreUNC then return end
 
