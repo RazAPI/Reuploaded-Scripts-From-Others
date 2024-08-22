@@ -10,7 +10,7 @@ function toClipboard(String)
 		});
 	else
 		Notify({
-			Description = "Unsuported executor so your link hasnt been copied.";
+			Description = "Unsupported executor so your link hasnt been copied.";
 			Duration = 3;
 
 		});
@@ -131,7 +131,7 @@ MainUI.Name = "MainUI"
 MainUI.Parent = ScreenGui
 MainUI.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 MainUI.BackgroundTransparency = 0.140
-MainUI.Position = UDim2.new(0, 10,0, 186)
+MainUI.Position = UDim2.new(0, 15, 0, 186)
 MainUI.Size = UDim2.new(0, 62, 0, 347)
 MainUI.Visible = false
 
