@@ -10,7 +10,7 @@ local threadIdentities = {}
 local httpserv = game:GetService("HttpService")
 
 getgenv().identifyexecutor = function()
-    return "Slaze", "v3.0791.6"
+    return "Slaze", "v3.1.4"
 end
 
 getgenv().getexecutorname = function()
