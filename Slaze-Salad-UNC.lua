@@ -765,8 +765,9 @@ also join https://discord.gg/gYhqMRBeZV because yes
  new update:
  table loop update!!
 ]]
-
+local Identity = "7"
 -- Definitions
+
 local table = table.clone(table) -- Prevent modifications from other scripts
 local debug = table.clone(debug) -- ^^^^
 local bit32 = table.clone(bit32)
@@ -802,7 +803,7 @@ print = print
 warn = warn
 error = error
 pcall = pcall
-printidentity = printidentity
+printidentity = print("Current identity is " ..Identity
 ipairs = ipairs
 pairs = pairs
 tostring = tostring
