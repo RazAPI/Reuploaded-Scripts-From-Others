@@ -1,25 +1,16 @@
 
---[[ _____       _           _ _        _____     _                   ______                _   _                 
-    / ____|     | |         | ( )      / ____|   | |                 |  ____|              | | (_)                
-   | (___   __ _| | __ _  __| |/ ___  | |     ___| | ___ _ __ _   _  | |__ _   _ _ __   ___| |_ _  ___  _ __  ___ 
-    \___ \ / _` | |/ _` |/ _` | / __| | |    / _ \ |/ _ \ '__| | | | |  __| | | | '_ \ / __| __| |/ _ \| '_ \/ __|
-    ____) | (_| | | (_| | (_| | \__ \ | |___|  __/ |  __/ |  | |_| | | |  | |_| | | | | (__| |_| | (_) | | | \__ \
-   |_____/ \__,_|_|\__,_|\__,_| |___/  \_____\___|_|\___|_|   \__, | |_|   \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
-                                                               __/ |                                              
-   -credits:                                                  |___/                                               
-   -vxsty: Creator of original project | moreUNC
-   -salad: Maintainer of Salad's Celery Functions
-   -carot: Developer of Salad's Celery Functions
+--[[
 
    Thank you Salad & Carot for the useful functions.
-]]
+
+--]]
 
 local objs = {}
 local threadIdentities = {}
 local httpserv = game:GetService("HttpService")
 
 getgenv().identifyexecutor = function()
-    return "Slaze", "v3.1"
+    return "Slaze", "v3.0791.6"
 end
 
 getgenv().getexecutorname = function()
@@ -2482,4 +2473,3 @@ end
 
 syn.protect_gui(DrawingDict)
 syn.protect_gui(ClipboardUI)
-print("loaded funcs")
