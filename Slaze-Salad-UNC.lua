@@ -403,16 +403,10 @@ getgenv().compareinstances = function(a, b)
     return false
 end
 
--- RENC START --
 
-
---things that arent mine start 
 
 --end of de things that arent mine
 
-getgenv().getlocalplayer = function()
-    return getplayer()
-end
 
 getgenv().firesignal = function(button, event) --button 💀
     if button and event and button[event] then
