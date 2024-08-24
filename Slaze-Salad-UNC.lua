@@ -461,21 +461,13 @@ getgenv().getfps = function(suffix: boolean)
     return not suffix and fps or fps.." fps"
 end
 
-getgenv().getplayers = function()
-    local players = {}
-    for _, x in pairs(game:GetService("Players"):GetPlayers()) do
-        players[x.Name] = x
-    end
-    players["LocalPlayer"] = game:GetService("Players").LocalPlayer
-    return players
-end
 
 getgenv().getplayer = function(name: string)
     return not name and getplayers()["LocalPlayer"] or getplayers()[name]
 end
 
 getgenv().getaffiliateid = function()
-  return "salad-aff0"
+  return "slaze-aff0"
 end
 --end of de things that arent mine
 
