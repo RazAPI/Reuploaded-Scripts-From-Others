@@ -1,9 +1,9 @@
 
+
 --[[
 
-   Thank you Salad & Carot for the useful functions.
-
---]]
+     Thank you Salad & Carot for these functions!
+]]
 
 local objs = {}
 local threadIdentities = {}
@@ -403,10 +403,85 @@ getgenv().compareinstances = function(a, b)
     return false
 end
 
+-- RENC START --
 
 
+--things that arent mine start 
+getgenv().customprint = function(text: string, properties: table, imageId: rbxasset)
+    print(text)
+    task.wait(.025)
+    local msg = game:GetService("CoreGui").DevConsoleMaster.DevConsoleWindow.DevConsoleUI:WaitForChild("MainView").ClientLog[tostring(#game:GetService("CoreGui").DevConsoleMaster.DevConsoleWindow.DevConsoleUI.MainView.ClientLog:GetChildren())-1].msg
+    for i, x in pairs(properties) do
+        msg[i] = x
+    end
+    if imageId then
+         msg.Parent.image.Image = imageId 
+    end
+end
+
+getgenv().getdevice = function()
+    local inputsrv = game:GetService("UserInputService")
+    if inputsrv:GetPlatform() == Enum.Platform.Windows then
+        return 'Windows'
+    elseif inputsrv:GetPlatform() == Enum.Platform.OSX then
+        return 'macOS'
+    elseif inputsrv:GetPlatform() == Enum.Platform.IOS then
+        return 'iOS'
+    elseif inputsrv:GetPlatform() == Enum.Platform.UWP then
+        return 'Windows (Microsoft Store)'
+    elseif inputsrv:GetPlatform() == Enum.Platform.Android then
+        return 'Android'
+    else 
+        return 'Unknown'
+    end
+end
+
+getgenv().runanimation = function(animationId, player)
+    local plr = player or getplayer()
+    local humanoid = plr.Character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animation = Instance.new("Animation")
+        animation.AnimationId = "rbxassetid://" .. tostring(animationId)
+        humanoid:LoadAnimation(animation):Play()
+    end
+end
+
+getgenv().getping = function(suffix: boolean)
+    local rawping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
+    local pingstr = rawping:sub(1,#rawping-7)
+    local pingnum = tonumber(pingstr)
+    local ping = tostring(math.round(pingnum))
+    return not suffix and ping or ping.." ms"
+end
+
+getgenv().getfps = function(suffix: boolean)
+    local rawfps = game:GetService("Stats").Workspace.Heartbeat:GetValue()
+    local fpsnum = tonumber(rawfps)
+    local fps = tostring(math.round(fpsnum))
+    return not suffix and fps or fps.." fps"
+end
+
+getgenv().getplayers = function()
+    local players = {}
+    for _, x in pairs(game:GetService("Players"):GetPlayers()) do
+        players[x.Name] = x
+    end
+    players["LocalPlayer"] = game:GetService("Players").LocalPlayer
+    return players
+end
+
+getgenv().getplayer = function(name: string)
+    return not name and getplayers()["LocalPlayer"] or getplayers()[name]
+end
+
+getgenv().getaffiliateid = function()
+  return "slaze-aff0"
+end
 --end of de things that arent mine
 
+getgenv().getlocalplayer = function()
+    return getplayer()
+end
 
 getgenv().firesignal = function(button, event) --button 💀
     if button and event and button[event] then
@@ -692,7 +767,6 @@ also join https://discord.gg/gYhqMRBeZV because yes
 ]]
 
 -- Definitions
-
 local table = table.clone(table) -- Prevent modifications from other scripts
 local debug = table.clone(debug) -- ^^^^
 local bit32 = table.clone(bit32)
@@ -2399,3 +2473,4 @@ end
 
 syn.protect_gui(DrawingDict)
 syn.protect_gui(ClipboardUI)
+print("loaded funcs")
