@@ -1,4 +1,5 @@
-
+-- A dex explorer that removes un-necessary features including syn.protect_gui, and request.
+-- Of course, this is just used for Scorpions scripthub.
 
 local nodes = {}
 local selection
@@ -10345,7 +10346,6 @@ Main = (function()
 
         -- other
         --env.setfflag = setfflag
-        env.request = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
         env.decompile = decompile or (env.getscriptbytecode and env.request and env.base64encode and function(scr)
             local s, bytecode = pcall(env.getscriptbytecode, scr)
             if not s then
@@ -10371,7 +10371,6 @@ Main = (function()
 
             return decoded.output
         end)
-        env.protectgui = protect_gui or (syn and syn.protect_gui)
         env.gethui = gethui or get_hidden_gui
         env.setclipboard = setclipboard or toclipboard or set_clipboard or (Clipboard and Clipboard.set)
         env.getnilinstances = getnilinstances or get_nil_instances
