@@ -14,7 +14,7 @@ local VirtualUser = game:GetService("VirtualUser")
 local RenderStepped = RunService.RenderStepped
 
 if not RunService:IsStudio() then
-	LocalPlayer.Idled:connect(function()
+	LocalPlayer.Idled:Connect(function()
 		VirtualUser:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
 		wait(1)
 		VirtualUser:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
@@ -24,14 +24,16 @@ end
 task.spawn(function()
 	pcall(function()
 		if game.PlaceId == 3623096087 then
-			if game.Workspace:FindFirstChild("RobloxForwardPortals") then
-				game.Workspace.RobloxForwardPortals:Destroy()
+			local portals = game.Workspace:FindFirstChild("RobloxForwardPortals")
+			if portals then
+				portals:Destroy()
 			end
 		end
 	end)
 end)
 
 local ProtectGui = protectgui or (syn and syn.protect_gui) or function(f) end
+
 
 local Themes = {
 	Names = {
