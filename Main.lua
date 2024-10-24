@@ -3,7 +3,7 @@
 
 local Lighting = game:GetService("Lighting")
 local RunService = game:GetService("RunService")
-local LocalPlayer = game:GetService("Players").LocalPlayer
+local LocalPlayer = game.Players.LocalPlayer
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local Camera = game:GetService("Workspace").CurrentCamera
